@@ -27,11 +27,12 @@ module.exports = {
         for(var i = 0; i < users.length; i++){
             if(users[i].name === req.body.name && users[i].password === req.body.password){
                 req.session.currentUser = users[i];
-                res.send({userFound: true})
-            } else {
-                res.send({userFound: false})
-            }
+                console.log(req.session.currentUser);
+                return res.send({userFound: true})
+            } 
         }
+             res.send({userFound: false})
+        
     }
 
 }

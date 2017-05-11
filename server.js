@@ -9,6 +9,9 @@ const userCtrl = require('./controllers/userCtrl');
 
 const app = express();
 
+
+// serving our front end files through here using express-static
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(cors(corsOptions))
 app.use(session({ 

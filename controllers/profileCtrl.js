@@ -30,12 +30,12 @@ module.exports = {
         for(var i in user.friends){
             for(var j in profiles){
                 if(user.friends[i] === profiles[j].name){
-                    arr.push(profiles[j].name);
+                    arr.push(profiles[j]);
                 }
                 
             }
         }
-            res.send({
+            res.status(200).json({
                 currentUser: user,
                 friends: arr
             })
